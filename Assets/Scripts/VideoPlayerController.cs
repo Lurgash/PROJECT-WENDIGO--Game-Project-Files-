@@ -1,13 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Video;
 using System.Collections.Generic;
 
 public class VideoPlayerController : MonoBehaviour
 {
-    public RawImage videoImage;
     public VideoPlayer videoPlayer;
-    public List<Toggle> toggles;
+    public List<GameObject> targets;
 
     private void Start()
     {
@@ -22,19 +20,15 @@ public class VideoPlayerController : MonoBehaviour
 
     private void OnVideoEnd(VideoPlayer vp)
     {
-        foreach (Toggle toggle in toggles)
+        foreach (GameObject target in targets)
         {
-            if (toggle.isOn)
+            if (target.activeSelf)
             {
-                switch (toggle.gameObject.name)
-                {
-                    case "Toggle1":
-                        Debug.Log("Toggle1 está activado");
-                        break;
-                    case "Toggle2":
-                        Debug.Log("Toggle2 está activado");
-                        break;
-                }
+                target.SetActive(false);
+            }
+            else
+            {
+                target.SetActive(true);
             }
         }
     }

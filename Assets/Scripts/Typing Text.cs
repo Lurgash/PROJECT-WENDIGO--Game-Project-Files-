@@ -5,7 +5,7 @@ using TMPro;
 
 public class TypingEffect : MonoBehaviour
 {
-    public float typingSpeed = 0.1f; // Velocidad de escritura del texto
+    public float typingSpeed = 0.1f; 
     public string fullText = "Texto completo a mostrar";
     private string currentText = "";
 

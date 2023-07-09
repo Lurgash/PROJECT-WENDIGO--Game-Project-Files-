@@ -24,7 +24,7 @@ public class ActivateAndExecuteScript : MonoBehaviour
             if (!scriptToExecute.enabled)
                 scriptToExecute.enabled = true;
 
-            // Ejecuta el código del script ejecutado aquí
+           
             scriptToExecute.SendMessage("MethodName", SendMessageOptions.DontRequireReceiver);
         }
     }
